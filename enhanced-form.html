@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enhanced Content & Form Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background: #f7f7f7;
+      color: #222;
+    }
+    header, section, aside, main, footer {
+      margin-bottom: 2rem;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    }
+    h1, h2 {
+      color: #2a4d69;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    table, th, td {
+      border: 1px solid #bbb;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+    }
+    ul, ol {
+      margin-left: 2rem;
+    }
+    form {
+      display: grid;
+      gap: 1.25rem;
+    }
+    label {
+      font-weight: bold;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .form-row {
+      display: flex;
+      gap: 2rem;
+    }
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .form-row {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+    .media-section img, .media-section video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML5 Enhanced Content & Form Demo</h1>
+    <nav>
+      <ul>
+        <li><a href="#info" aria-label="Go to Info Section">Info</a></li>
+        <li><a href="#features" aria-label="Go to Features List">Features</a></li>
+        <li><a href="#table" aria-label="Go to Table Section">Table</a></li>
+        <li><a href="#media" aria-label="Go to Media Section">Media</a></li>
+        <li><a href="#form" aria-label="Go to Form Section">Form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="info">
+      <h2>Project Info</h2>
+      <p>This page demonstrates well-structured HTML5 content and a comprehensive, accessible form. It uses lists, tables, media, and semantic tags to organize information clearly.</p>
+    </section>
+
+    <section id="features">
+      <h2>Features List</h2>
+      <ol>
+        <li>Semantic structure</li>
+        <li>Accessible navigation</li>
+        <li>Table for data presentation</li>
+        <li>Responsive media embedding</li>
+        <li>Advanced HTML5 form with validation</li>
+      </ol>
+    </section>
+
+    <section id="table">
+      <h2>Example Table</h2>
+      <table>
+        <caption>User Registration Summary</caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jane Doe</td>
+            <td>jane@example.com</td>
+            <td>Kenya</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>John Smith</td>
+            <td>john@sample.org</td>
+            <td>Uganda</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="media" class="media-section">
+      <h2>Media Example</h2>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=640&q=80" alt="Nature landscape">
+        <figcaption>Sample nature image from Unsplash.</figcaption>
+      </figure>
+      <figure>
+        <video controls poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=640&q=80">
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>Sample video: Big Buck Bunny (W3Schools)</figcaption>
+      </figure>
+    </section>
+
+    <section id="form">
+      <h2>Registration Form</h2>
+      <form action="#" method="post" autocomplete="on">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullname">Full Name <span aria-hidden="true">*</span></label>
+            <input 
+              type="text" 
+              id="fullname" 
+              name="fullname"
+              placeholder="Enter your full name" 
+              required 
+              autocomplete="name"
+            >
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span aria-hidden="true">*</span></label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="e.g. jane@example.com" 
+              required 
+              autocomplete="email"
+            >
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              min="1900-01-01"
+              max="2025-12-31"
+              autocomplete="bday"
+            >
+          </div>
+          <div class="form-group">
+            <label for="country">Country <span aria-hidden="true">*</span></label>
+            <select id="country" name="country" required>
+              <option value="" disabled selected>Select your country</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="Rwanda">Rwanda</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="username">Username <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Choose a username"
+              pattern="^[a-zA-Z0-9_]{5,20}$"
+              title="5-20 characters, letters, numbers or underscores"
+              required
+              autocomplete="username"
+            >
+          </div>
+          <div class="form-group">
+            <label for="password">Password <span aria-hidden="true">*</span></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Minimum 8 characters"
+              minlength="8"
+              required
+              autocomplete="new-password"
+            >
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="profilepic">Profile Picture</label>
+            <input
+              type="file"
+              id="profilepic"
+              name="profilepic"
+              accept="image/*"
+            >
+          </div>
+          <div class="form-group">
+            <label for="referral">Referral Code (readonly)</label>
+            <input
+              type="text"
+              id="referral"
+              name="referral"
+              value="WEB2025"
+              readonly
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <fieldset>
+            <legend>Subscribe to newsletter?</legend>
+            <label>
+              <input type="radio" name="newsletter" value="yes" checked>
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="newsletter" value="no">
+              No
+            </label>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <label for="about">About You</label>
+          <textarea
+            id="about"
+            name="about"
+            rows="4"
+            placeholder="Tell us something about yourself"
+            maxlength="500"
+            autocomplete="off"
+          ></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit">Register</button>
+          <button type="reset">Clear</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <aside>
+    <h2>Accessibility Notes</h2>
+    <ul>
+      <li>All form controls have associated labels.</li>
+      <li>Navigation uses <code>aria-label</code> for clarity.</li>
+      <li>Semantic tags group content for assistive technology.</li>
+      <li>Keyboard navigation is supported.</li>
+    </ul>
+  </aside>
+
+  <footer>
+    <p>&copy; 2025 Advanced HTML5 Demo for PLP Web Technologies</p>
+  </footer>
+</body>
+</html>
